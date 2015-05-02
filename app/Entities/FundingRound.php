@@ -1,8 +1,8 @@
 <?php namespace CB\Entities;
 
-use Illuminate\Database\Eloquent\Model;
 
-class FundingRound extends Model
+
+class FundingRound extends BaseEntity
 {
 
 }

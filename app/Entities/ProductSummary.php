@@ -1,8 +1,8 @@
 <?php namespace CB\Entities;
 
-use Illuminate\Database\Eloquent\Model;
 
-class ProductSummary extends Model
+
+class ProductSummary extends BaseEntity
 {
 
 }
