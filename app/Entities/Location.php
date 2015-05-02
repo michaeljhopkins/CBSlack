@@ -1,4 +1,4 @@
-<?php namespace CB\Models;
+<?php namespace CB\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
