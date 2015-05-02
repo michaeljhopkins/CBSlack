@@ -1,8 +1,6 @@
 <?php namespace CS\Http\Api\Controllers;
 
-use CS\Http\Controllers\Controller;
-
-class ApiController extends Controller
+class ApiController extends BaseController
 {
     public function __construct()
     {
