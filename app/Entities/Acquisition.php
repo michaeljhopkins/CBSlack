@@ -1,4 +1,4 @@
-<?php namespace CB\Entities;
+<?php namespace CS\Entities;
 
 
 
