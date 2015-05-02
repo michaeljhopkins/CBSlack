@@ -3,14 +3,25 @@
 use CS\Entities\Organization;
 
 class CBController extends BaseController {
+    /**
+     * @var Organization
+     */
+    private $organization;
+
+    /**
+     * @param Organization $organization
+     */
+    public function __construct(Organization $organization){
+        $this->organization = $organization;
+    }
 
 	public function index()
 	{
 		//
 	}
-	public function show($id)
+	public function show($uuid)
 	{
-		$reponse = Organization::find($id);
+		$reponse = $this->organization->find($uuid);
         return $reponse;
 	}
 

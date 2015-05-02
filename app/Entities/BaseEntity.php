@@ -5,6 +5,13 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 class BaseEntity extends Model{
+    public static function find($uuid)
+    {
+        $org = new Organization();
+        $url = 'http://api.crunchbase.com/v/2/';
+        $response = $org->curl_execute($url.'organization/'.$uuid);
+        return $response;
+    }
     public function curl_execute($url)
     {
         $fullUrl = $url.'&user_key='.Config::get('CS.key');
