@@ -1,0 +1,42 @@
+/bootstrap/compiled.php
+/vendor
+composer.phar
+# Removing composer.lock for quick-deploy on server. Run composer install
+# instead of composer update to update packages.
+#composer.lock
+.env
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+app/storage
+.floo
+.flooignore
+
+/.idea
+#public/assets/min
+node_modules
+
+._.*
+*.iml
+fetch-database.sh
+/atlassian-ide-plugin.xml
+
+# dont care about hash assets
+app/config/packages/spekkionu/assetcachebuster
+# same with ide helper
+/app/config/ide-helper.php
+
+/public/vendor
+
+
+# --- some additional files that don't need to eventually end up in prod. Generate them locally
+.phpstorm.meta.php
+_ide_helper.php
+/config/ide-helper.php
+/config/debugbar.php
+
+
+# Ignore php library folder of LogEntries
+/le_php-master
+node_debug.log
