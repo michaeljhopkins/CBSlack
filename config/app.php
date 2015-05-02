@@ -143,7 +143,7 @@ return [
 		'CS\Providers\BusServiceProvider',
 		'CS\Providers\ConfigServiceProvider',
 		'CS\Providers\EventServiceProvider',
-		'CS\Providers\RouteServiceProvider',
+		'CS\Providers\ApiServiceProvider',
 
 		/*
 		 * Package Service Providers
