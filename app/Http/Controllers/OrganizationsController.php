@@ -30,7 +30,7 @@ class OrganizationsController extends BaseController {
         if($org->getStatusCode() === 404){
             $org2 = new Organization('organizations');
             try{
-                $response = $org2->get();
+                $response = $org2->getOrgStuff();
             }
             catch(\Exception $e){
                 Slack::to($channel)->send('Sorry. No Search Results');
