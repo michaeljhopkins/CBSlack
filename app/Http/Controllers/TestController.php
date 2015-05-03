@@ -18,4 +18,9 @@ class TestController extends BaseController {
 		$message = Input::get('message');
 		\Slack::send($message);
 	}
+
+	public function heartbeat()
+	{
+		return \Response::make(null,200);
+	}
 }

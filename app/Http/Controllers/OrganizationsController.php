@@ -34,14 +34,14 @@ class OrganizationsController extends BaseController {
                 Slack::to($channel)->send($r['name']);
                 Slack::to($channel)->send('https://www.crunchbase.com/'.$r['path']);
             }
-            return Response::json(['message' => 'success']);
+            return Response::make(null,200);
         }
         else{
             $data = $org->getResponseBody()['data'];
             $properties = $data['properties'];
             $relationships = $data['relationships'];
             Slack::to($channel)->send('*'.$properties['name'].'* - '.$properties['short_description']);
-            return Response::json(['message' => 'success']);
+            return Response::make(null,200);
         }
 
     }

@@ -1,4 +1,5 @@
 <?php
+Route::get('heartbeat','TestController@heartbeat');
 
 Route::get('test','TestController@get');
 Route::post('test','TestController@post');
