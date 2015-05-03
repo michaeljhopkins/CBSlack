@@ -25,11 +25,17 @@ class OrganizationsController extends BaseController {
     public function findOrSearch()
     {
         $name = urlencode(Input::get('text'));
-        $channel = Input::get('channel_name');
+        $channel = '#'.Input::get('channel_name');
         $org = $this->organization->find($name);
         if($org->getStatusCode() === 404){
             $org2 = new Organization('organizations');
-            $response = $org2->get();
+            try{
+                $response = $org2->get();
+            }
+            catch(\Exception $e){
+                Slack::to($channel)->send('Sorry. No Search Results');
+                return Response::make(null,200);
+            }
             foreach($response as $r){
                 Slack::to($channel)->send($r['name']);
                 Slack::to($channel)->send('https://www.crunchbase.com/'.$r['path']);

@@ -148,7 +148,6 @@ return [
 		/*
 		 * Package Service Providers
 		 */
-        'Barryvdh\Debugbar\ServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Maknz\Slack\SlackServiceProvider',
 		'Prettus\Repository\Providers\RepositoryServiceProvider',

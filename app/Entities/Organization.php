@@ -6,9 +6,12 @@ class Organization extends BaseEntity
     public function __construct($endpoint = null)
     {
         if($endpoint){
-            $this->setEndpoint($endpoint);
+            parent::__construct($endpoint);
         }
-        parent::__construct('organization');
+        else{
+            parent::__construct('organization');
+        }
+
     }
     public function find($name)
     {

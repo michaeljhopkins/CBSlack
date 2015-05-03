@@ -24,23 +24,18 @@ class PersonsController extends BaseController {
      */
     public function findOrSearch()
     {
-        $name = urlencode(Input::get('text'));
+        $textInput = Input::get('text');
+        $name = str_replace(' ','-',trim($textInput));
+        $channel = '#'.Input::get('channel_name');
         $org = $this->person->find($name);
-        if($org->getStatusCode() === 404){
-            $org2 = new Person('persons');
-            $response = $org2->get();
-            foreach($response as $r){
-                Slack::to('#random')->send($r['name']);
-                Slack::to('#random')->send('https://www.crunchbase.com/'.$r['path']);
-            }
-            return Response::json(['message' => 'success']);
+        if($org) {
+            $properties = $org['properties'];
+            $relationships = $org['relationships'];
+            Slack::to($channel)->send('*' . $properties['last_name'] . ', ' . $properties['first_name'] . '* - ' . $properties['bio']);
+            return Response::make(null, 200);
         }
         else{
-            $data = $org->getResponseBody()['data'];
-            $properties = $data['properties'];
-            $relationships = $data['relationships'];
-            Slack::to('#random')->send('*'.$properties['name'].'* - '.$properties['short_description']);
-            return Response::json(['message' => 'success']);
+            Slack::to($channel)->send('No Search Results');
         }
 
     }
