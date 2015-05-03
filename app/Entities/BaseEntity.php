@@ -13,8 +13,9 @@ class BaseEntity extends Networking {
 
     public function __construct($endpoint, $attributes = []){
         /* relative path */
-        $this->baseUrl = 'http://api.crunchbase.com/v/2';
-        $this->endpoint = $endpoint;
+        $this->attributes = [];
+        $this->baseUrl    = 'http://api.crunchbase.com/v/2';
+        $this->endpoint   = $endpoint;
         $this->options['query'] = true;
         parent::__construct();
         
