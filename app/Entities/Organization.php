@@ -10,7 +10,7 @@ class Organization extends BaseEntity
     }
     public function find($uuid)
     {
-        return $this->find($uuid);
+        return parent::find($uuid);
     }
 
 }
