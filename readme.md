@@ -1,4 +1,6 @@
-# Crunchbase/Slack Integration
+## Crunchbase Slack Integration
+
+<img src="http://i.imgur.com/pRWQKyv.png">
 
 This is a tool that allows for querying the crunchbase API via custom "slash" commands in a slack channel
 
