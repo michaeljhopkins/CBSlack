@@ -35,4 +35,20 @@ class BaseEntity extends Networking {
     public function where($key,$value){
         return $this->collection->where($key,$value);
     }
+    
+     public function __call($key,$args){
+        return $this->collection->where($key,$args[0]);
+    }
+
+    public function __get($property){
+        if(property_exists($this,$property)){
+            return $this->$property;
+        }else{
+            return null;
+        }
+    }
+    public function __set($property,$value){
+        $this->$property = $value;
+    }
+    
 }
