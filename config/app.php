@@ -150,6 +150,7 @@ return [
 		 */
         'Barryvdh\Debugbar\ServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'Maknz\Slack\SlackServiceProvider',
 		'Prettus\Repository\Providers\RepositoryServiceProvider',
 		'Regulus\ActivityLog\ActivityLogServiceProvider',
 		'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
@@ -205,6 +206,7 @@ return [
 
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 		'Activity' => 'Regulus\ActivityLog\Models\Activity',
+        'Slack' => 'Maknz\Slack\Facades\Slack',
 
 
 	],

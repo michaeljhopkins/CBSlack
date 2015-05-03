@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e8ea49fbb42ad7784e990191038a7b36",
+    "hash": "e81111b83b054632feabb7aa8cd2349a",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1498,6 +1498,55 @@
                 "rest"
             ],
             "time": "2014-12-10 16:59:07"
+        },
+        {
+            "name": "maknz/slack",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maknz/slack.git",
+                "reference": "9c4f7d0434f6e17a401bf823f6b2b36e671538de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maknz/slack/zipball/9c4f7d0434f6e17a401bf823f6b2b36e671538de",
+                "reference": "9c4f7d0434f6e17a401bf823f6b2b36e671538de",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "guzzlehttp/guzzle": "~5.0|~4.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.2.*"
+            },
+            "suggest": {
+                "illuminate/support": "Required for Laravel support"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Maknz\\Slack\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "maknz",
+                    "email": "github@mak.geek.nz"
+                }
+            ],
+            "description": "A simple PHP package for sending messages to Slack, with a focus on ease of use and elegant syntax. Includes Laravel support out of the box.",
+            "keywords": [
+                "laravel",
+                "slack"
+            ],
+            "time": "2015-03-16 20:39:54"
         },
         {
             "name": "maximebf/debugbar",
@@ -4093,7 +4142,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drapor/networking": 20
+        "drapor/networking": 20,
+        "maknz/slack": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
