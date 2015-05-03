@@ -9,10 +9,9 @@ class OrganizationsController extends BaseController {
     private $organization;
 
     /**
-     * @param Organization $organization
      */
-    public function __construct(Organization $organization){
-        $this->organization = $organization;
+    public function __construct(){
+        $this->organization =  new Organization();
     }
 
     public function findOrSearch($name)
