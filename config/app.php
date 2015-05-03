@@ -150,9 +150,7 @@ return [
 		 */
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Maknz\Slack\SlackServiceProvider',
-		'Prettus\Repository\Providers\RepositoryServiceProvider',
-		'Regulus\ActivityLog\ActivityLogServiceProvider',
-		'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
+		'Prettus\Repository\Providers\RepositoryServiceProvider'
 
 
 	],
