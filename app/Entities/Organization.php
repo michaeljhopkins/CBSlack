@@ -8,6 +8,7 @@ class Organization extends BaseEntity
     {
         $f = Factory::create();
         $attr = [
+            'id' => 5,
             'permalink' => $f->text(30),
             'api_path' => $f->url,
             'web_path' => $f->url,
