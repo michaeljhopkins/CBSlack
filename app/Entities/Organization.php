@@ -24,7 +24,7 @@ class Organization extends BaseEntity
 
     public function getOrgStuff()
     {
-        $data = $this->send(['page' => 1,'user_key' => Config::get('cb.key')], $this->endpoint, 'get')['body'];
+        $data = $this->send(['page' => 1,'user_key' => Config::get('cb.key'),'query' => \Input::get('text')], $this->endpoint, 'get')['body'];
         if(array_key_exists('message',$data) && $data['message'] == 'No Response Received.'){
             throw new Exception('No Search Results');
         }
