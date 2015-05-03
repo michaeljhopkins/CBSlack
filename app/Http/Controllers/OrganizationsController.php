@@ -17,7 +17,7 @@ class OrganizationsController extends BaseController {
 
     public function findOrSearch($name)
     {
-        $response = $this->organization->find($name);
+        dd($this->organization->find($name));
     }
 
     public function show($uuid)
