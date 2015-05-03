@@ -1,4 +1,4 @@
-<?php namespace CS;
+<?php namespace CS\Entities;
 
 use Illuminate\Auth\Authenticatable;
 

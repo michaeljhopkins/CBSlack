@@ -2,8 +2,9 @@
 
 class Organization extends BaseEntity
 {
-    public function show($uuid)
+    public static function find($uuid)
     {
-        return $this->find('organization',$uuid);
+        return $this->get('organization'.$uuid)->first();
     }
+
 }

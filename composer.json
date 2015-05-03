@@ -15,7 +15,9 @@
     "prettus/l5-repository": "^2.0",
     "regulus/activity-log": "^0.5.2",
     "barryvdh/laravel-ide-helper": "^2.0",
-    "rap2hpoutre/laravel-log-viewer": "^0.2.7"
+    "rap2hpoutre/laravel-log-viewer": "^0.2.7",
+    "doctrine/dbal": "^2.5",
+    "drapor/networking": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0",
@@ -51,5 +53,6 @@
   },
   "config": {
     "preferred-install": "dist"
-  }
+  },
+  "minimum-stability": "dev"
 }

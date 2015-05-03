@@ -1,35 +1,25 @@
 <?php namespace CS\Entities;
 
 use Config;
-use Illuminate\Database\Eloquent\Collection;
+use Drapor\Networking\Networking;
+use Illuminate\Support\Collection;
 
-class BaseEntity{
-    public function find($uri,$uuid)
-    {
+class BaseEntity extends Networking{
+    public $apiKey;
 
-        $url = 'http://api.crunchbase.com/v/2';
-        $response = $this->curl_execute($url.'/'.$uri.'/'.$uuid);
-        return $response;
+    public function __construct($baseUrl){
+        /* relative path */
+        $this->baseUrl          = $baseUrl;
+        $this->options['query'] = true;
+        $this->apiKey = config('CS.key');
     }
-    public function curl_execute($url)
-    {
-        $fullUrl = $url.'&user_key='.Config::get('CS.key');
-        $ch = curl_init($fullUrl);
-        curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER	=> TRUE, CURLOPT_TIMEOUT => 5]);
 
-        $response = curl_exec($ch);
-        $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        if ($http_status !== 200) {
-            $return = "HTTP call failed with error {$http_status}.";
-        }
-        elseif ($response === FALSE){
-            $return = 'HTTP call failed empty response.';
-        }
-        else{
-            /** @var \Illuminate\Support\Collection $collection */
-            $collection = new Collection($response);
-            $return = $collection->first();
-        }
-        return $return;
+    public function get($endpoint,$page){
+
+        $data = $this->send(['page' => $page,'user_key' => $this->apiKey], $endpoint, 'get')['body'];
+
+        $collection = new Collection($data);
+
+        return $collection;
     }
 }
