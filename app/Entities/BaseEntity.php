@@ -25,7 +25,12 @@ class BaseEntity extends Networking {
     }
 
     public function find($id){
-        return $this->send(['user_key' => Config::get('cb.key')], $this->endpoint . '/' . $id ,'get')['body'];
+        $object =  $this->send(['user_key' => Config::get('cb.key')], $this->endpoint . '/' . $id ,'get')['body'];
+        
+        foreach($object as $key => $value){
+            $this->$key = $value;
+        }
+        return $this;
     }
 
     public function first(){
