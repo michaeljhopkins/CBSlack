@@ -2,6 +2,7 @@
 
 use CS\Entities\Organization;
 use Illuminate\Support\Collection;
+use Input;
 use Response;
 use Slack;
 
@@ -21,8 +22,9 @@ class OrganizationsController extends BaseController {
      * @param $name
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function findOrSearch($name)
+    public function findOrSearch()
     {
+        $name = Input::get('name');
         $org = $this->organization->find($name);
         if($org->getStatusCode() === 404){
             $org2 = new Organization('organizations');

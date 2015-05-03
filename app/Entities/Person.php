@@ -1,17 +1,18 @@
 <?php namespace CS\Entities;
 
-use Faker\Factory;
 
 class Person extends BaseEntity
 {
-    public function __construct()
+    public function __construct($endpoint = null)
     {
-        $f = Factory::create();
+        if($endpoint){
+            $this->setEndpoint($endpoint);
+        }
         parent::__construct('person');
     }
-    public function find($uuid)
+    public function find($name)
     {
-        return $this->find($uuid);
+        return parent::find($name);
     }
 
 }
