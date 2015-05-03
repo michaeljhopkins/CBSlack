@@ -33,9 +33,7 @@ class BaseEntity extends Networking {
 
     public function find($id){
         $object = $this->send(
-            [
-                'user_key' => Config::get('cb.key')
-            ], $this->endpoint . '/' . $id ,'get')['body'];
+            ['user_key' => Config::get('cb.key')], $this->endpoint . '/' . $id ,'get')['body'];
         $this->setAttributes($object);
         return $this;
     }
@@ -58,6 +56,11 @@ class BaseEntity extends Networking {
         $this->collection =  $this->collection->where($key,$args[0]);
         
         return $this;
+    }
+
+    public function setEndpoint($endpoint)
+    {
+        $this->endpoint = $endpoint;
     }
 
     public function __get($property){

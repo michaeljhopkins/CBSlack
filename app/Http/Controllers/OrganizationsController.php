@@ -16,7 +16,17 @@ class OrganizationsController extends BaseController {
 
     public function findOrSearch($name)
     {
-        dd($this->organization->find($name));
+        $org = $this->organization->find($name);
+        if($org->getStatusCode() === 404){
+            $org2 = new Organization();
+            $org2->setEndpoint('organizations');
+            $response = $org2->get(1);
+        }
+        else{
+            $response = $org;
+        }
+        return \Response::json($response);
+
     }
 
     public function show($uuid)

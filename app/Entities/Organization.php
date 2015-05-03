@@ -1,6 +1,5 @@
 <?php namespace CS\Entities;
 
-use Faker\Factory;
 
 class Organization extends BaseEntity
 {
@@ -8,9 +7,9 @@ class Organization extends BaseEntity
     {
         parent::__construct('organization');
     }
-    public function find($uuid)
+    public function find($name)
     {
-        return parent::find($uuid);
+        return parent::find($name);
     }
 
 }
