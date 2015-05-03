@@ -24,7 +24,7 @@ class OrganizationsController extends BaseController {
      */
     public function findOrSearch()
     {
-        $name = Input::get('name');
+        $name = urlencode(Input::get('text'));
         $org = $this->organization->find($name);
         if($org->getStatusCode() === 404){
             $org2 = new Organization('organizations');
