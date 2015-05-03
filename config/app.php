@@ -148,6 +148,8 @@ return [
 		/*
 		 * Package Service Providers
 		 */
+        'Barryvdh\Debugbar\ServiceProvider',
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Prettus\Repository\Providers\RepositoryServiceProvider',
 		'Regulus\ActivityLog\ActivityLogServiceProvider',
 		'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',

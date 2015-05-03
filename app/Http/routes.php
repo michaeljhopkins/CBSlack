@@ -1,7 +1,5 @@
 <?php
 
-Route::group(['prefix' => 'cb'],function(){
-    Route::resource('organizations','OrganizationsController@index');
-    Route::resource('products','ProductsController@index');
-    Route::resource('people','PersonsController@index');
-});
+Route::resource('organizations','OrganizationsController');
+Route::resource('products','ProductsController');
+Route::resource('people','PersonsController');
