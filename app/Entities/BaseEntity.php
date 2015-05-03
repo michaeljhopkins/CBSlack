@@ -19,7 +19,7 @@ class BaseEntity extends Networking {
         $this->options['query'] = true;
         parent::__construct();
         
-        if(count($attributes) > 0){
+        if(count($attributes)){
             $this->setAttributes($attributes);
         }
     }
