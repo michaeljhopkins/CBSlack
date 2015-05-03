@@ -25,16 +25,20 @@ class OrganizationsController extends BaseController {
     {
         $org = $this->organization->find($name);
         if($org->getStatusCode() === 404){
-            $org2 = new Organization();
-            $org2->setEndpoint('organizations');
-            $response = array_slice($org2->get(1)->collection['data']['items'], 0, 5);
+            $org2 = new Organization('organizations');
+            $response = $org2->get();
             foreach($response as $r){
                 Slack::to('#random')->send($r['name']);
                 Slack::to('#random')->send('https://www.crunchbase.com/'.$r['path']);
             }
+            return Response::json(['message' => 'success']);
         }
         else{
-            return Response::json($org);
+            $data = $org->getResponseBody()['data'];
+            $properties = $data['properties'];
+            $relationships = $data['relationships'];
+            Slack::to('#random')->send('*'.$properties['name'].'* - '.$properties['short_description']);
+            return Response::json(['message' => 'success']);
         }
 
     }

@@ -24,11 +24,11 @@ class BaseEntity extends Networking {
         }
     }
 
-    public function get($page){
+    public function get(){
         $data = $this->send(
-            ['page' => $page,'user_key' => Config::get('cb.key')], $this->endpoint, 'get')['body'];
+            ['page' => 1,'user_key' => Config::get('cb.key')], $this->endpoint, 'get')['body'];
         $this->collection = new Collection($data);
-        return $this;
+        return array_slice($this->collection['data']['items'],0,5);
     }
 
     public function find($id){
