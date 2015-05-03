@@ -31,6 +31,10 @@ A different response if an exact company name is not found
     Facebook Social Chatroulette
     https://www.crunchbase.com/organization/facebook-social-chat-roulette
      
- * `/cb-per <persons name>` - Return CB info on a given person
+_`/cb-per <persons name>`_ 
+
+Return CB info on a given person
  
 ---
+
+In the process of building out entities for each entity in the API for the purpose of IDE autocomplete

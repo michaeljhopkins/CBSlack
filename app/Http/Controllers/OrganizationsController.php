@@ -19,8 +19,8 @@ class OrganizationsController extends BaseController {
     }
 
     /**
-     * @param $name
      * @return \Symfony\Component\HttpFoundation\Response
+     * @internal param $name
      */
     public function findOrSearch()
     {
@@ -49,7 +49,6 @@ class OrganizationsController extends BaseController {
             Slack::to($channel)->send('*'.$properties['name'].'* - '.$properties['short_description']);
             return Response::make(null,200);
         }
-
     }
 
     public function show($uuid)
