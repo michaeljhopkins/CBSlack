@@ -4,22 +4,35 @@ use Config;
 use Drapor\Networking\Networking;
 use Illuminate\Support\Collection;
 
-class BaseEntity extends Networking{
-    public $apiKey;
+class BaseEntity extends Networking {
+    public $endpoint;
+    public $entity;
+    /* @var $collection Collection  */
+    public $collection;
 
-    public function __construct($baseUrl){
+    public function __construct($endpoint){
         /* relative path */
-        $this->baseUrl          = $baseUrl;
+        $this->baseUrl = 'http://api.crunchbase.com/v/2';
+        $this->endpoint = $endpoint;
         $this->options['query'] = true;
-        $this->apiKey = config('CS.key');
+        parent::__construct();
     }
 
-    public function get($endpoint,$page){
+    public function get($page){
+        $data = $this->send(['page' => $page,'user_key' => Config::get('cb.key')], $this->endpoint, 'get')['body'];
+        $this->collection = new Collection($data);
+        return $this;
+    }
 
-        $data = $this->send(['page' => $page,'user_key' => $this->apiKey], $endpoint, 'get')['body'];
+    public function find($id){
+        return $this->send(['user_key' => Config::get('cb.key')], $this->endpoint . '/' . $id ,'get')['body'];
+    }
 
-        $collection = new Collection($data);
+    public function first(){
+        return $this->collection->first();
+    }
 
-        return $collection;
+    public function where($key,$value){
+        return $this->collection->where($key,$value);
     }
 }
