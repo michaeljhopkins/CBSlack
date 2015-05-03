@@ -21,7 +21,7 @@ class CBController extends BaseController {
 	}
 	public function show($uuid)
 	{
-		$reponse = $this->organization->find($uuid);
+		$reponse = $this->organization->show($uuid);
         return $reponse;
 	}
 
