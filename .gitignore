@@ -1,5 +1,4 @@
 /bootstrap/compiled.php
-/vendor
 composer.phar
 # Removing composer.lock for quick-deploy on server. Run composer install
 # instead of composer update to update packages.
