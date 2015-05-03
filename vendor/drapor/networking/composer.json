@@ -1,0 +1,24 @@
+{
+    "name": "drapor/networking",
+    "description": "Make Http Requests",
+    "authors": [
+        {
+            "name": "Michael Kantor",
+            "email": "info@empathynyc.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "guzzlehttp/guzzle": "5.0.*@dev"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/controllers"
+        ],
+        "psr-4": {
+            "Drapor\\Networking\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
