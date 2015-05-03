@@ -38,3 +38,24 @@ Return CB info on a given person
 ---
 
 In the process of building out entities for each entity in the API for the purpose of IDE autocomplete
+
+ * Address
+ * Acquisition
+ * Category
+ * Degree
+ * Fund
+ * FundingRound
+ * Image
+ * Investment
+ * Ipo
+ * Job
+ * Location
+ * News
+ * Organization
+ * OrganizationSummary
+ * Person
+ * PersonSummary
+ * Product
+ * ProductSummary
+ * Website
+ * Video
