@@ -4,11 +4,11 @@ This is a tool that allows for querying the crunchbase API via custom "slash" co
 
 ## Commands
 
- #`/cb-org facebook` : Perform a search for a given company. Code will look for exact match first, and if nothing is found then fall back to CB's search endpoint
+### `/cb-org facebook` : Perform a search for a given company. Code will look for exact match first, and if nothing is found then fall back to CB's search endpoint
  
  * _Facebook_ - Facebook is an online social networking service that enables its users to connect with friends and family as well as make new connections
  
- #`/cb-org faceb` - 
+### `/cb-org faceb` - 
  
  Facebook
  
