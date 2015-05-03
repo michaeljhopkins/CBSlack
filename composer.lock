@@ -4,8 +4,51 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b44aa00803ef5b01c409c36db8b31fb7",
+    "hash": "cd7c85dfa904e139e27ea319d44d84d2",
     "packages": [
+        {
+            "name": "alchemyai/alchemyapi_php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AlchemyAPI/alchemyapi_php.git",
+                "reference": "7dcc5c0dc54612925501c956431e11642276522c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AlchemyAPI/alchemyapi_php/zipball/7dcc5c0dc54612925501c956431e11642276522c",
+                "reference": "7dcc5c0dc54612925501c956431e11642276522c",
+                "shasum": ""
+            },
+            "type": "sdk",
+            "autoload": {
+                "classmap": [
+                    "alchemyapi.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "AlchemyAPI",
+                    "email": "support@alchemyapi.com",
+                    "homepage": "http://www.alchemyapi.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A software development kit (sdk) for AlchemyAPI using PHP",
+            "homepage": "http://www.alchemyapi.com/",
+            "keywords": [
+                "ai",
+                "alchemyai",
+                "alchemyapi",
+                "php",
+                "sdk"
+            ],
+            "time": "2015-04-15 19:43:25"
+        },
         {
             "name": "barryvdh/laravel-ide-helper",
             "version": "dev-master",
@@ -4033,7 +4076,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drapor/networking": 20,
-        "maknz/slack": 20
+        "maknz/slack": 20,
+        "alchemyai/alchemyapi_php": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
