@@ -1,4 +1,4 @@
-<?php namespace CS\Http\Api\Controllers;
+<?php namespace CS\Http\Controllers;
 
 use CS\Entities\Person;
 

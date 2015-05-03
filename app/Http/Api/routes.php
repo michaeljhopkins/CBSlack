@@ -1,10 +1,7 @@
 <?php
 
-Route::get('/', 'ApiController@index');
-
 Route::group(['prefix' => 'cb'],function(){
-    Route::get('/','CBController@index');
-    Route::get('organizations','OrganizationController@index');
-    Route::get('products','ProductController@index');
-    Route::get('people','PeopleController@index');
+    Route::resource('organizations','OrganizationController@index');
+    Route::resource('products','ProductController@index');
+    Route::resource('people','PeopleController@index');
 });

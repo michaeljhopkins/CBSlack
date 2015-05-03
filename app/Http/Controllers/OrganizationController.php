@@ -1,8 +1,8 @@
-<?php namespace CS\Http\Api\Controllers;
+<?php namespace CS\Http\Controllers;
 
 use CS\Entities\Organization;
 
-class CBController extends BaseController {
+class OrganizationsController extends BaseController {
     /**
      * @var Organization
      */
@@ -15,14 +15,13 @@ class CBController extends BaseController {
         $this->organization = $organization;
     }
 
-	public function index()
-	{
-		//
-	}
-	public function show($uuid)
-	{
-		$reponse = $this->organization->show($uuid);
+    public function index()
+    {
+        //
+    }
+    public function show($uuid)
+    {
+        $reponse = $this->organization->find($uuid);
         return $reponse;
-	}
-
+    }
 }
