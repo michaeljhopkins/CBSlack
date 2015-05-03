@@ -25,13 +25,14 @@ class OrganizationsController extends BaseController {
     public function findOrSearch()
     {
         $name = urlencode(Input::get('text'));
+        $channel = Input::get('channel_name');
         $org = $this->organization->find($name);
         if($org->getStatusCode() === 404){
             $org2 = new Organization('organizations');
             $response = $org2->get();
             foreach($response as $r){
-                Slack::to('#random')->send($r['name']);
-                Slack::to('#random')->send('https://www.crunchbase.com/'.$r['path']);
+                Slack::to($channel)->send($r['name']);
+                Slack::to($channel)->send('https://www.crunchbase.com/'.$r['path']);
             }
             return Response::json(['message' => 'success']);
         }
@@ -39,7 +40,7 @@ class OrganizationsController extends BaseController {
             $data = $org->getResponseBody()['data'];
             $properties = $data['properties'];
             $relationships = $data['relationships'];
-            Slack::to('#random')->send('*'.$properties['name'].'* - '.$properties['short_description']);
+            Slack::to($channel)->send('*'.$properties['name'].'* - '.$properties['short_description']);
             return Response::json(['message' => 'success']);
         }
 
