@@ -9,6 +9,7 @@ class BaseEntity extends Networking {
     public $entity;
     /* @var $collection Collection  */
     public $collection;
+    public $attributes;
 
     public function __construct($endpoint, $attributes = []){
         /* relative path */
@@ -56,19 +57,19 @@ class BaseEntity extends Networking {
     }
 
     public function __get($property){
-        if(property_exists($this,$property)){
-            return $this->$property;
+        if(array_key_exists($this->attributes,$property)){
+            return $this->attributes[$property];
         }else{
             return null;
         }
     }
     public function __set($property,$value){
-        $this->$property = $value;
+        $this->attributes[$property] = $value;
     }
     
     private function setAttributes($attributes){
           foreach($attributes as $key => $value){
-            $this->$key = $value;
+            $this->attributes[$key] = $value;
         }
     }
     
