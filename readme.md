@@ -4,31 +4,35 @@ This is a tool that allows for querying the crunchbase API via custom "slash" co
 
 ## Commands
 
-### `/cb-org facebook` : Perform a search for a given company. Code will look for exact match first, and if nothing is found then fall back to CB's search endpoint
+### `/cb-org facebook`
+ 
+Perform a search for a given company. Code will look for exact match first, and if nothing is found then fall back to CB's search endpoint
  
  * _Facebook_ - Facebook is an online social networking service that enables its users to connect with friends and family as well as make new connections
  
 ### `/cb-org faceb` - 
+
+A different response if an exact company name is not found
+
+Facebook
  
- Facebook
+https://www.crunchbase.com/organization/facebook
  
- https://www.crunchbase.com/organization/facebook
+FacebookLicious!
  
- FacebookLicious!
+https://www.crunchbase.com/organization/facebooklicious
  
- https://www.crunchbase.com/organization/facebooklicious
+Facebookster
  
- Facebookster
+https://www.crunchbase.com/organization/facebookster
+
+FaceBuzz
  
- https://www.crunchbase.com/organization/facebookster
+https://www.crunchbase.com/organization/facebuzz
  
- FaceBuzz
+Facebook Social Chatroulette
  
- https://www.crunchbase.com/organization/facebuzz
- 
- Facebook Social Chatroulette
- 
- https://www.crunchbase.com/organization/facebook-social-chat-roulette
+https://www.crunchbase.com/organization/facebook-social-chat-roulette
  
  * `/cb-per <persons name>` - Return CB info on a given person
  
