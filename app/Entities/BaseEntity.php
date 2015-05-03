@@ -13,11 +13,11 @@ class BaseEntity extends Networking {
 
     public function __construct($endpoint, $attributes = []){
         /* relative path */
+        parent::__construct();
         $this->attributes = [];
         $this->baseUrl    = 'http://api.crunchbase.com/v/2/';
         $this->endpoint   = $endpoint;
         $this->options['query'] = true;
-        parent::__construct();
         
         if(count($attributes) <= 0){
             $this->setAttributes($attributes);
@@ -25,13 +25,17 @@ class BaseEntity extends Networking {
     }
 
     public function get($page){
-        $data = $this->send(['page' => $page,'user_key' => Config::get('cb.key')], $this->endpoint, 'get')['body'];
+        $data = $this->send(
+            ['page' => $page,'user_key' => Config::get('cb.key')], $this->endpoint, 'get')['body'];
         $this->collection = new Collection($data);
         return $this;
     }
 
     public function find($id){
-        $object = $this->send(['user_key' => Config::get('cb.key')], $this->endpoint . '/' . $id ,'get')['body'];
+        $object = $this->send(
+            [
+                'user_key' => Config::get('cb.key')
+            ], $this->endpoint . '/' . $id ,'get')['body'];
         $this->setAttributes($object);
         return $this;
     }
